@@ -32,8 +32,6 @@ function precompile(input, opts) {
 
     opts = opts || {};
     var env = opts.env || new Environment([]);
-    var asyncFilters = env.asyncFilters;
-    var extensions = env.extensionsList;
 
     var pathStats = fs.existsSync(input) && fs.statSync(input);
     var output = '';
@@ -136,4 +134,4 @@ function _precompile(str, name, env, asFunction) {
 module.exports = {
     precompile: precompile,
     precompileString: precompileString
-}
+};

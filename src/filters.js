@@ -9,10 +9,11 @@ var filters = {
     },
 
     batch: function(arr, linecount, fill_with) {
+        var i;
         var res = [];
         var tmp = [];
 
-        for(var i=0; i<arr.length; i++) {
+        for(i = 0; i < arr.length; i++) {
             if(i % linecount === 0 && tmp.length) {
                 res.push(tmp);
                 tmp = [];
@@ -23,7 +24,7 @@ var filters = {
 
         if(tmp.length) {
             if(fill_with) {
-                for(var i=tmp.length; i<linecount; i++) {
+                for(i = tmp.length; i < linecount; i++) {
                     tmp.push(fill_with);
                 }
             }
@@ -371,7 +372,7 @@ var filters = {
             if (lib.isArray(obj)) {
                 parts = obj.map(function(item) {
                     return enc(item[0]) + '=' + enc(item[1]);
-                })
+                });
             } else {
                 parts = [];
                 for (var k in obj) {
